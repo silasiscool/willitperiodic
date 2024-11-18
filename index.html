@@ -40,13 +40,6 @@
             <p>Have you ever wanted an online tool to tell you how to spell something using periodic table element abbreviations? Well if so, today is your lucky day!<br>
             Simply enter a word or list of words in the box below, and click on the word you want to see spelled in the output section!<br>
             Have fun! (but not too much fun...)</p>
-        <h2>Input</h2>
-            <p>Type or copy a list of words (seperated by line breaks) here:</p>
-            <textarea name="text-area" id="text-area">Hello World
-Hi Sphere
-            </textarea>
-            <p>or upload a list of words here (caution: extremely large files may cause extreme lag):</p>
-            <input type="file" id="file-input">
         <h2>Options</h2>
             <input type="checkbox" id="allow-spaces" class="option" checked>
             <label for="allow-spaces">Allow Spaces</label><br>
@@ -54,6 +47,13 @@ Hi Sphere
             <label for="show-matches">Show matches</label><br>
             <input type="checkbox" id="show-non-matches" class="option">
             <label for="show-non-matches">Show non-matches</label>
+        <h2>Input</h2>
+            <p>Type or copy a list of words (seperated by line breaks) here:</p>
+            <textarea name="text-area" id="text-area">Hello World
+Hi Sphere
+            </textarea>
+            <p>or upload a list of words here (caution: extremely large files may cause extreme lag):</p>
+            <input type="file" id="file-input">
         <h2>Output:</h2>
             <p>Matches will appear in <span class="matche">white</span> and non-matches will appear in <span class="non-match">red</span>.</p>
             <p>Click on any match to see how it is spelled using elements</p>

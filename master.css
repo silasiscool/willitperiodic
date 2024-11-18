@@ -90,7 +90,7 @@ section {
 
 #text-area {
     width: 50vw;
-    height: 35vh;
+    height: 20vh;
     font-family: var(--monospace-font-family);
     font-size: inherit;
 }
