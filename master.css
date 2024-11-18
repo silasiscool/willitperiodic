@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap'); /* Alata */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;0,700;1,300&display=swap'); /* Ubuntu */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap'); /* Ubuntu Mono */
+
+:root {
+    --black: black;
+    --white: white;
+    --accent: #446DF6;
+    --background: #010618;
+    --dark-accent: #000c2e;
+    --light-accent: #839EF9;
+    --heading-font-family: 'Alata', sans-serif;
+    --body-font-family: 'Ubuntu', sans-serif;
+    --monospace-font-family: 'Ubuntu Mono', monospace;
+    --body-font-weight: 300;
+    --match-color: inherit;
+    --non-match-color: red;
+
+    --alkali-color: #613e12;
+    --alkali-earth-color: #7b6124;
+    --lanthanoid-color: #3b2d1a;
+    --actinoid-color: #66354b;
+    --transition-color: #611e1c;
+    --post-transition-color: #1c3762;
+    --metalloid-color: #2a4f47;
+    --reactive-nonmetal-color: #4a6126;
+    --noble-color: #35254e;
+}
+
+html {
+    color-scheme: dark;
+    height: 100%;
+}
+
+h1, h2, h3, p {
+    max-width: 60ch;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--heading-font-family);
+}
+
+p {
+    line-height: 1.7;
+}
+
+body {
+    background-color: var(--background);
+    margin: 0;
+    height: 100%;
+    color: var(--white);
+    overflow-y: auto;
+    font-family: var(--body-font-family);
+    font-weight: var(--body-font-weight);
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    width: 95%;
+    position: relative;
+}
+
+header::after {
+    content: "";
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+}
+
+
+main {
+    padding: 2rem;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+#text-area {
+    width: 50vw;
+    height: 35vh;
+    font-family: var(--monospace-font-family);
+    font-size: inherit;
+}
+
+#file-input {
+    padding: 1rem;
+}
+
+#show-matches:checked ~ output p.match,
+#show-non-matches:checked ~ output p.non-match{
+    display: block;
+}
+
+output {
+    border: 1px solid var(--light-accent);
+    display: block;
+    padding: 1rem;
+}
+
+output p {
+    display: none;
+    font-family: var(--monospace-font-family);
+    line-height: 0.5;
+}
+
+input, label, output p.match, button {
+    cursor: pointer;
+}
+
+.match {
+    color: var(--match-color);
+}
+
+.non-match {
+    color: var(--non-match-color);
+}
+
+dialog {
+    position: fixed;
+    top: 10rem;
+    bottom:10rem;
+    min-width: 10rem;
+    min-height: 10rem;
+}
+
+dialog.show {
+    display: block;
+}
+
+#dialog-close {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+#dialog-close:hover {
+    opacity: 40%;
+}
+
+spelling-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+spelling {
+    display: flex;
+}
+
+element {
+    display: block;
+    border: 1px solid var(--white);
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5ch;
+    margin: 0.5ch;
+    width: 2ch;
+    font-weight: 400;
+}
+
+element.alkali {
+    background-color: var(--alkali-color);
+}
+
+element.alkali-earth {
+    background-color: var(--alkali-earth-color);
+}
+
+element.lanthanoid {
+    background-color: var(--lanthanoid-color);
+}
+
+element.actinoid {
+    background-color: var(--actinoid-color);
+}
+
+element.transition {
+    background-color: var(--transition-color);
+}
+
+element.post-transition {
+    background-color: var(--post-transition-color);
+}
+
+element.metalloid {
+    background-color: var(--metalloid-color);
+}
+
+element.reactive-nonmetal {
+    background-color: var(--reactive-nonmetal-color);
+}
+
+element.noble {
+    background-color: var(--noble-color);
+}
+
+element.space {
+    border: none;
+    width: 0;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    margin-top: 50vh;
+    flex-direction: column;
+    position: relative;
+    padding: 0 2rem;
+    text-align: center;
+    width: 90%;
+}
+  
+footer::before {
+    content: "";
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: -1rem;
+}
+  
+footer p {
+    width: fit-content;
+}
+  
+footer .link-list {
+    margin: 0;
+}
+
+.link-list {
+    margin-bottom: 1rem;
+}
+  
+.link-list p {
+    margin: 8px;
+}
+
+a {
+    color: var(--light-accent);
+    text-decoration: none;
+    position: relative;
+    border: 1px solid transparent;
+}
+  
+a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.25s;
+    border-radius: 100px;
+}
+  
+a:is(:hover, :focus:not(:focus-visible))::after {
+    width: 100%;
+    left: 0;
+}
+
+a.with-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    padding: 0 0.5rem;
+    flex-direction: row;
+}
+  
+a.with-icon p {
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+  
+a:not(.with-icon) {
+    padding: 0.5rem 0;
+}
+
+.updated-text {
+    font-size: 0.6rem;
+    font-style: italic;
+    opacity: 60%;
+}
+
+
+/* Scrollbar */
+
+body:not(::-webkit-scrollbar) {
+    scrollbar-color: rgba(255, 255, 255, 0.45) var(--background);
+    scrollbar-width: thin;
+}
+  
+/* width */
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 100px;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.75);
+}

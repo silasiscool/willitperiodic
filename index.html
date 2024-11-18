@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:title" content="Will it Periodic?" />
+    <meta property="og:description" content="An online tool/toy to tell you how to spell words using periodic table abbreviations.">
+    <meta name="description" content="An online tool/toy to tell you how to spell words using periodic table abbreviations.">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.silasbartol.com/willitperiodic" />
+    <meta property="og:image" content="https://www.silasbartol.com/willitperiodic/favicon.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Will it Periodic?" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Will it periodic?</title>
+    <link rel="shortcut icon" href="favicon.png">
+
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close" />
+    <script src="https://kit.fontawesome.com/b445dd26e2.js" crossorigin="anonymous"></script>
+    <script src="functions.js" defer></script>
+    <script src="master.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Will it periodic?</h1>
+    </header>
+    <dialog>
+        <button id="dialog-close">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <h3 id="word-display"></h3>
+        <p id="num-spellings"></p>
+        <spelling-list></spelling-list>
+    </dialog>
+    <main>
+        <h2>What is this?</h2>
+            <p>Have you ever wanted an online tool to tell you how to spell something using periodic table element abbreviations? Well if so, today is your lucky day!<br>
+            Simply enter a word or list of words in the box below, and click on the word you want to see spelled in the output section!<br>
+            Have fun! (but not too much fun...)</p>
+        <h2>Input</h2>
+            <p>Type or copy a list of words (seperated by line breaks) here:</p>
+            <textarea name="text-area" id="text-area">Hello World
+Hi Sphere
+            </textarea>
+            <p>or upload a list of words here (caution: extremely large files may cause extreme lag):</p>
+            <input type="file" id="file-input">
+        <h2>Options</h2>
+            <input type="checkbox" id="allow-spaces" class="option" checked>
+            <label for="allow-spaces">Allow Spaces</label><br>
+            <input type="checkbox" id="show-matches" class="option" checked>
+            <label for="show-matches">Show matches</label><br>
+            <input type="checkbox" id="show-non-matches" class="option">
+            <label for="show-non-matches">Show non-matches</label>
+        <h2>Output:</h2>
+            <p>Matches will appear in <span class="matche">white</span> and non-matches will appear in <span class="non-match">red</span>.</p>
+            <p>Click on any match to see how it is spelled using elements</p>
+            <output></output>
+    </main>
+    <footer>
+        <p>
+          Thank you for visiting my site!<br>Visit <a href="https://www.silasbartol.com">silasbartol.com</a> for more.
+        </p>
+        <div class="link-list">
+          <a class="with-icon" target="_blank" href="https://github.com/silasiscool/willitperiodic">
+            <i class="fa-brands fa-github"></i>
+            <p>View Site Files</p>
+          </a>
+        </div>
+        <p class="updated-text">
+          Last Updated November 2024
+        </p>
+      </footer>
+</body>
+</html>
