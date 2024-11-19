@@ -8,6 +8,7 @@ const dialog = document.getElementsByTagName('dialog')[0];
 const wordDisplay = document.getElementById('word-display');
 const numSpellings = document.getElementById('num-spellings');
 const spellingList = document.getElementsByTagName('spelling-list')[0];
+const analysisList = document.getElementById('analysis-list');
 
 // Inputs
 let allowSpaces = () => document.getElementById('allow-spaces').checked;
@@ -34,6 +35,7 @@ dialogClose.addEventListener('click', () => dialog.classList.remove('show'));
 // Take text and process to output
 function updateOutput () {
     
+    let matchesList = []
     let wordList = textArea.value.split('\n');
     output.innerHTML = '';
     wordList.forEach(word => {
@@ -49,12 +51,34 @@ function updateOutput () {
         if (!wordMatches) 
             return
 
+        matchesList.push(word)
         wordElement.setAttribute('tabindex', 0)
 
         wordElement.addEventListener('click', () => {
             showDialog(word);
         })
     });
+
+    matchesList.sort((a,b) => {
+        return b.length - a.length
+    })
+
+    analysisList.innerHTML = '';
+    let analysisItem;
+
+    analysisItem = document.createElement('li');
+    analysisItem.textContent = matchesList.length + (matchesList.length == 1 ? " match":" matches")
+    analysisList.appendChild(analysisItem);
+    analysisItem = document.createElement('li');
+    analysisItem.textContent = Math.round(matchesList.length/wordList.length*100) + "% matching";
+    analysisList.appendChild(analysisItem);
+    analysisItem = document.createElement('li');
+    analysisItem.textContent = "The longest match is \"" + matchesList[0] + "\"";
+    analysisList.appendChild(analysisItem);
+
+    
+
+
 }
 
 function showDialog(word) {

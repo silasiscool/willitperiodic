@@ -160,6 +160,7 @@ spelling-list {
 
 spelling {
     display: flex;
+    margin: 1rem;
 }
 
 element {
@@ -219,7 +220,7 @@ element.space {
 footer {
     display: flex;
     align-items: center;
-    margin-top: 50vh;
+    margin-top: 25vh;
     flex-direction: column;
     position: relative;
     padding: 0 2rem;
