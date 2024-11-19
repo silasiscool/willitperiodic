@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap'); /* Ubuntu Mono */
 
 :root {
-    --black: black;
+    --black: hsl(0, 0%, 0%);
     --white: white;
     --accent: #446DF6;
     --background: #010618;
@@ -134,6 +134,9 @@ dialog {
     bottom:10rem;
     min-width: 10rem;
     min-height: 10rem;
+    max-height: 75vh;
+    overflow: auto;
+    z-index: 100;
 }
 
 dialog.show {
@@ -304,28 +307,28 @@ a:not(.with-icon) {
 
 /* Scrollbar */
 
-body:not(::-webkit-scrollbar) {
+:not(::-webkit-scrollbar) {
     scrollbar-color: rgba(255, 255, 255, 0.45) var(--background);
     scrollbar-width: thin;
 }
   
 /* width */
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 5px;
 }
 
 /* Track */
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: transparent;
 }
 
 /* Handle */
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.45);
     border-radius: 100px;
 }
 
 /* Handle on hover */
-body::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.75);
 }
