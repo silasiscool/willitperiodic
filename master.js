@@ -72,6 +72,7 @@ function updateOutput () {
     analysisItem = document.createElement('li');
     analysisItem.textContent = Math.round(matchesList.length/wordList.length*100) + "% matching";
     analysisList.appendChild(analysisItem);
+    if (matchesList.length < 1) return
     analysisItem = document.createElement('li');
     analysisItem.textContent = "The longest match is \"" + matchesList[0] + "\"";
     analysisList.appendChild(analysisItem);
