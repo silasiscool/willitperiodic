@@ -42,9 +42,9 @@ function updateOutput () {
         word = word.trim();
         if (word == "")
             return;
-        let wordElement = document.createElement('p');
-        wordElement.textContent = word;
         let wordMatches = periodicMatch(word, allowSpaces());
+        let wordElement = document.createElement(wordMatches ? 'button' : 'div');
+        wordElement.textContent = word;
         wordElement.classList.add(wordMatches ? 'match' : 'non-match')
         output.appendChild(wordElement);
 
